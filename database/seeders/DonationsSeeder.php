@@ -15,7 +15,7 @@ class DonationsSeeder extends Seeder
     public function run()
     {
         Donation::factory()
-                ->count(50)
-                ->create();
+            ->count(50)
+            ->create();
     }
 }

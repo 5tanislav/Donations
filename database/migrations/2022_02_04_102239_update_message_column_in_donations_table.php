@@ -26,7 +26,7 @@ class UpdateMessageColumnInDonationsTable extends Migration
     public function down()
     {
         Schema::table('donations', function (Blueprint $table) {
-            //
+            $table->text('message')->change();
         });
     }
 }
