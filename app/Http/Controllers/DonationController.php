@@ -7,7 +7,7 @@ use App\Models\Donation;
 
 class DonationController extends Controller
 {
-    public function index() 
+    public function index()
     {
         return view('donation');
     }
@@ -19,7 +19,7 @@ class DonationController extends Controller
 
     public function saveDonation(Request $request)
     {
-        $donation = new Donation;
+        $donation = new Donation();
         $donation->name = $request->name;
         $donation->email = $request->email;
         $donation->amount = $request->amount;
