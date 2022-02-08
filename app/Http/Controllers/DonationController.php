@@ -25,6 +25,6 @@ class DonationController extends Controller
         $donation->amount = $request->amount;
         $donation->message = $request->message;
         $donation->save();
-        return redirect('/');
+        return redirect('/')->with('status', 'Thank you for your donation!');
     }
 }

@@ -77,3 +77,8 @@ tr:nth-child(even)
     position: relative;
     z-index: 0;
 }
+
+.alert_message {
+    text-align: center;
+}
+

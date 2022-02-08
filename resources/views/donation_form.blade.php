@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
@@ -29,22 +30,22 @@
                 <div class="title">Welcome</div>
                 <div class="subtitle">Donation form</div>
                 <div class="input-container ic1">
-                    <input id="name" class="input" type="text" name="name" placeholder=" " />
+                    <input id="name" class="input" type="text" name="name" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Your Name</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="email" class="input" type="email" name="email" placeholder=" " />
+                    <input id="email" class="input" type="email" name="email" placeholder=" " required/>
                     <div class="cut cut-short"></div>
                     <label for="email" class="placeholder">Email</>
                 </div>
                 <div class="input-container ic2">
-                    <input id="amount" class="input" type="number" name="amount" placeholder=" " />
+                    <input id="amount" class="input" type="number" name="amount" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="amount" class="placeholder">Amount of your donation</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="message" class="input" type="text" name="message" placeholder=" " />
+                    <input id="message" class="input" type="text" name="message" placeholder=" "    />
                     <div class="cut"></div>
                     <label for="message" class="placeholder">Message</label>
                 </div>

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
         <title>Laravel</title>
 
@@ -28,6 +29,11 @@
                 <p><input class="btn" type="Submit" value="Donate"></p>
             </form>
         </div>
+        @if(session('status'))
+    <div class="alert alert-success alert_message">
+        {{ session('status') }}
+    </div>
+  @endif
         <div class="cards">
             <h3>Cards</h3>
         </div>

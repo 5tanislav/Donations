@@ -122,3 +122,7 @@ body {
   .submit:active {
     background-color: #06b;
   }
+
+  input:invalid {
+    border: 1px dashed rgb(250, 93, 93);
+  }
