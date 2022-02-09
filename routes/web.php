@@ -14,11 +14,8 @@ use App\Http\Controllers\DonationController;
 |
 */
 
-Route::get('/', [DonationController::class, 'index']);
+Route::resource('donations', DonationController::class);
 
-Route::get('/donate', [DonationController::class, 'showDonationForm']);
-
-Route::post(
-    '/new-donation',
-    [DonationController::class, 'saveDonation']
-)->name('add-donation');
+Route::get('/', function () {
+    return redirect(route('donations.index'));
+});

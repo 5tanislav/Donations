@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreDonateRequest;
 use App\Models\Donation;
+
 
 class DonationController extends Controller
 {
@@ -12,19 +13,33 @@ class DonationController extends Controller
         return view('donation');
     }
 
-    public function showDonationForm()
+    public function create()
     {
         return view('donation_form');
     }
 
-    public function saveDonation(Request $request)
-    {
-        $donation = new Donation();
-        $donation->name = $request->name;
-        $donation->email = $request->email;
-        $donation->amount = $request->amount;
-        $donation->message = $request->message;
-        $donation->save();
-        return redirect('/')->with('status', 'Thank you for your donation!');
+    public function store(StoreDonateRequest $request)
+    {   
+        try {
+            $donation = new Donation();
+            $donation->name = $request->input('name');
+            $donation->email = $request->input('email');
+            $donation->amount = $request->input('amount');
+            if ($request->filled('message')) {
+                $donation->message = $request->input('message');
+            }
+            $donation->save();
+            return redirect('/donations')
+                ->with([
+                    'status' => true,
+                    'message' => 'Thank you for your donation!'
+                ]);
+            } catch (\Exception $e) {
+                return redirect('/donations')
+                    ->with([
+                        'status' => false,
+                        'message' => $e->getMessage()
+                    ]);
+            }
     }
 }
