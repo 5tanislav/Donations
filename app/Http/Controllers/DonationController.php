@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDonateRequest;
 use App\Models\Donation;
 
-
 class DonationController extends Controller
 {
     public function index()
@@ -19,7 +18,7 @@ class DonationController extends Controller
     }
 
     public function store(StoreDonateRequest $request)
-    {   
+    {
         try {
             $donation = new Donation();
             $donation->name = $request->input('name');
@@ -34,12 +33,12 @@ class DonationController extends Controller
                     'status' => true,
                     'message' => 'Thank you for your donation!'
                 ]);
-            } catch (\Exception $e) {
-                return redirect('/donations')
-                    ->with([
-                        'status' => false,
-                        'message' => $e->getMessage()
-                    ]);
-            }
+        } catch (\Exception $e) {
+            return redirect('/donations')
+                ->with([
+                    'status' => false,
+                    'message' => $e->getMessage()
+                ]);
+        }
     }
 }
