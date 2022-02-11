@@ -1,4 +1,4 @@
-.donators 
+.donators
 {
     width:100%;
     display: flex;
@@ -9,40 +9,42 @@
 table
 {
     border:2px solid rgb(85, 82, 85);
+    min-width: 1111px;
 }
 
 tr:nth-child(2n+3)
 {
     background-color: #8ac27a;
 }
-  
+
 tr:nth-child(even)
 {
     background-color: #e4a795;
 }
 
-.donators_table 
+.donators_table
 {
     display: flex;
     justify-content: center;
 }
 
-.cards 
+.cards
 {
     margin-top:20px;
     display: flex;
     justify-content: center;
 }
 
-.row 
+.row
 {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     margin-bottom: 1rem;
+    /* flex-wrap: nowrap; */
 }
 
-.col-header 
+.col-header
 {
     box-shadow: 4px 4px 9px rgba(252, 194, 4, 0.74);
     border-radius: 20px;
@@ -61,7 +63,6 @@ tr:nth-child(even)
 .button
 {
     margin-left:77%;
-    
 }
 
 .btn
@@ -76,9 +77,14 @@ tr:nth-child(even)
     cursor: pointer;
     position: relative;
     z-index: 0;
+    margin-top: 20px;
 }
 
 .alert_message {
     text-align: center;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+}
