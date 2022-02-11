@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDonateRequest;
 use App\Models\Donation;
+use Carbon\Carbon;
 
 class DonationController extends Controller
 {
     public function index()
     {
-        return view('donation');
+        $donations = Donation::paginate(10);
+        $top = Donation::orderby('amount', 'desc')->first();
+        $sum = Donation::sum('amount');
+        $dateFinish = Carbon::now();
+        $dateStart = Carbon::now()->startOfMonth();
+        $month = Donation::whereBetween('created_at', [$dateStart, $dateFinish])->sum('amount');
+        return view('donation', compact('donations', 'top', 'sum', 'month'));
     }
 
     public function create()
