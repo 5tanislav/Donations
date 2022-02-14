@@ -19,16 +19,16 @@ class DonationController extends Controller
         $widgetsData = [
             [
                 'title' => 'Top donater:',
-                'money' => $top->amount . '$',
+                'money' => $top->amount,
                 'name' => $top->name
             ],
             [
                 'title' => 'Last month amount:',
-                'money' => $month . '$',
+                'money' => $month,
             ],
                         [
                 'title' => 'All time amount:',
-                'money' => $sum . '$',
+                'money' => $sum,
             ],
 
         ];

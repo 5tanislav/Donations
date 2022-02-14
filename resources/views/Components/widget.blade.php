@@ -1,7 +1,7 @@
 <div class="col-header">
     {{$widgetData['title']}}
 <br>
-    {{$widgetData['money']}}
+    {{$widgetData['money']}}$
 <br>
     @if (!empty($widgetData['name']))
         {{$widgetData['name']}}

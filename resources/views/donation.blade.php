@@ -19,9 +19,6 @@
             @foreach($widgetsData as $widgetData)
                 <x-widget :widgetData="$widgetData"/>
             @endforeach
-
-            <!-- <div class="col-header">Last month amount: <br> {{ $month }}$ </div>
-            <div class="col-header">All time amount: <br> {{ $sum }}$ </div> -->
         </div>
         <div class="chart">
             <h3>Chart</h3>
