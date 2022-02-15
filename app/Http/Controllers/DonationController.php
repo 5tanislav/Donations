@@ -53,10 +53,12 @@ class DonationController extends Controller
             )
         );
     }
+
     public function create()
     {
         return view('donation_form');
     }
+
     public function store(StoreDonateRequest $request)
     {
         try {
