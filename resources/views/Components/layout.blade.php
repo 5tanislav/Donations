@@ -6,6 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
         <title>Laravel</title>
 
         <!-- Fonts -->
