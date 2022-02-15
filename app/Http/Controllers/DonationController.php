@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDonateRequest;
 use App\Models\Donation;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DonationController extends Controller
 {
@@ -32,11 +33,26 @@ class DonationController extends Controller
             ],
 
         ];
-        return view('donation', compact('donations', 'top', 'sum', 'month', 'widgetsData'));
+        $amountCount = Donation::orderBy('day')
+            ->groupBy('day')
+            ->get([
+                DB::raw('Date(created_at) as day'),
+                DB::raw('sum(amount) as sum')
+            ]);
+        $result = [['Date', 'Amount']];
+        foreach ($amountCount as $key => $value) {
+            $result[++$key] = [$value->day, (float) $value->sum];
+        }
+        return view(
+            'donation',
+            compact(
+                'donations',
+                'widgetsData',
+                'amountCount',
+                'result'
+            )
+        );
     }
-    // 'Top donater' => '123457.00$'
-    // ['Month amount' => '246788.24$'],
-    // ['All time amount' => '246788.24$']
 
     public function create()
     {
