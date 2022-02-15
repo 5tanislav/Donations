@@ -16,9 +16,9 @@
             <h3>Cards</h3>
         </div>
         <div class="row">
-            <div class="col-header">Top donater: <br> {{ $top->amount }}$ <br> Name: {{ $top->name }}</div>
-            <div class="col-header">Last month amount: <br> {{ $month }}$ </div>
-            <div class="col-header">All time amount: <br> {{ $sum }}$ </div>
+            @foreach($widgetsData as $widgetData)
+                <x-widget :widgetData="$widgetData"/>
+            @endforeach
         </div>
         <div class="chart">
             <h3>Chart</h3>

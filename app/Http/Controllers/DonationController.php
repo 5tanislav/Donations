@@ -16,8 +16,27 @@ class DonationController extends Controller
         $dateFinish = Carbon::now();
         $dateStart = Carbon::now()->startOfMonth();
         $month = Donation::whereBetween('created_at', [$dateStart, $dateFinish])->sum('amount');
-        return view('donation', compact('donations', 'top', 'sum', 'month'));
+        $widgetsData = [
+            [
+                'title' => 'Top donater:',
+                'money' => $top->amount,
+                'name' => $top->name
+            ],
+            [
+                'title' => 'Last month amount:',
+                'money' => $month,
+            ],
+                        [
+                'title' => 'All time amount:',
+                'money' => $sum,
+            ],
+
+        ];
+        return view('donation', compact('donations', 'top', 'sum', 'month', 'widgetsData'));
     }
+    // 'Top donater' => '123457.00$'
+    // ['Month amount' => '246788.24$'],
+    // ['All time amount' => '246788.24$']
 
     public function create()
     {
