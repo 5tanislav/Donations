@@ -25,7 +25,7 @@
                 </div>
                 <div class="row mb-3 justify-content-center">
                     <label for="amount" class="col-auto col-form-label">Amount</label>
-                <div class="col-3">
+                <div class="col-3 pl-1">
                     <input type="number" class="form-control" id="amount" name="amount">
                     @error('amount')
                         <div class="text-danger">{{ $message }}</div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="row mb-3 justify-content-center">
                     <label for="message" class="col-auto col-form-label">Message</label>
-                <div class="col-3">
+                <div class="col-3 pl-1">
                     <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                 </div>
                 </div>
