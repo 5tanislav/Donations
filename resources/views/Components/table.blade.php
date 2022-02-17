@@ -1,11 +1,13 @@
 <div>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Amount ($)</th>
-            <th>Message</th>
-        </tr>
+    <table class="table table-hover table-striped table-success">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount ($)</th>
+                <th>Message</th>
+            </tr>
+        </thead>
         @foreach ($donations as $donate)
         <tr>
             <td>{{ $donate->name }}</td>

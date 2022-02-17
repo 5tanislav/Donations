@@ -1,9 +1,10 @@
-<div class="col-header">
-    {{$widgetData['title']}}
-<br>
-    {{$widgetData['money']}}$
-<br>
-    @if (!empty($widgetData['name']))
+<div class="card text-white bg-success mb-3 w-25">
+    <div class="card-header">{{$widgetData['title']}}</div>
+    <div class="card-body">
+    <h5 class="card-title">{{$widgetData['money']}}$</h5>
+    <p class="card-text">
+        @if (!empty($widgetData['name']))
         {{$widgetData['name']}}
-    @endif
+        @endif</p>
+    </div>
 </div>

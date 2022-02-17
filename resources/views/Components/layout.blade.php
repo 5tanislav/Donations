@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
 
         <title>Laravel</title>
 
@@ -23,8 +25,6 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <link href="{{ URL::asset('css/donation.css') }}" rel="stylesheet">
-        <link href="{{ URL::asset('css/donation_form.css') }}" rel="stylesheet">
     </head>
     <body>
         {{ $slot }}

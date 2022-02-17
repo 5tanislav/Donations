@@ -11,7 +11,7 @@ class DonationController extends Controller
 {
     public function index()
     {
-        $donations = Donation::paginate(10);
+        $donations = Donation::paginate(5);
         $top = Donation::orderby('amount', 'desc')->first();
         $sum = Donation::sum('amount');
         $dateFinish = Carbon::now();
