@@ -1,27 +1,30 @@
 <x-layout>
-    <div class="don">
-        <div class="button">
+<div class="don">
+    <div class="p-3 mb-3 bg-success text-white text-center">
+        <i class="fa fa-search"></i> DONATION CAMPAIGN
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-end">
             <form action="{{ route('donations.create') }}">
-                <p><input class="btn" type="Submit" value="Donate"></p>
+                <button type="submit" class="btn btn-primary mb-3">
+                    Donation
+                </button>
             </form>
         </div>
+    </div>
         @if(!is_null(session('status')) && !empty(session('message')))
-            <div class="alert {{ session('status')
+            <div class="text-center my-3 alert {{ session('status')
                 ? 'alert-success'
                 : 'alert-danger' }} alert_message">
                 {{ session('message') }}
             </div>
         @endif
-        <div class="cards">
-            <h3>Cards</h3>
-        </div>
-        <div class="row">
+        <div class="row justify-content-evenly">
             @foreach($widgetsData as $widgetData)
                 <x-widget :widgetData="$widgetData"/>
             @endforeach
         </div>
         <div class="chart">
-            <h3>Chart</h3>
             <div id="linechart"
                  style="width: 900px; height: 500px; margin-left: 235px">
             </div>
@@ -49,9 +52,7 @@
                 }
             </script>
         </div>
-        <div class="donators_table">
-            <h3>Donators</h3>
-        </div>
+        <p class="h3 text-center">Donators</p>
         <div class="donators">
         <x-table :donations="$donations"/>
         </div>

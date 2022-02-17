@@ -1,41 +1,44 @@
 <x-layout>
-    <body>
-        <div class="donation_form">
+    <body class="text-center">
+        <div class="p-3 mb-3 bg-success text-white text-center">
+            Donation form
+        </div>
             <form action="{{route('donations.store')}}" method="post">
             @csrf
-                <div class="form">
-                    <div class="title">Welcome</div>
-                    <div class="subtitle">Donation form</div>
-                    <div class="input-container ic1">
-                        <input id="name" class="input" type="text" name="name" placeholder=" " />
-                        <div class="cut"></div>
-                        <label for="name" class="placeholder">Your Name</label>
-                        @error('name')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="input-container ic2">
-                        <input id="email" class="input" type="email" name="email" placeholder=" " />
-                        <div class="cut cut-short"></div>
-                        <label for="email" class="placeholder">Email</label>
-                        @error('email')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="input-container ic2">
-                        <input id="amount" class="input" type="number" name="amount" placeholder=" " />
-                        <div class="cut cut-long"></div>
-                        <label for="amount" class="placeholder">Amount of your donation</label>
-                        @error('amount')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="input-container ic2">
-                        <input id="message" class="input" type="text" name="message" placeholder=" "/>
-                        <div class="cut"></div>
-                        <label for="message" class="placeholder">Message</label>
-                    </div>
-                    <input type="submit" value="Submit" class="submit">
+                <div class="row mb-3 justify-content-center">
+                    <label for="name" class="col-auto col-form-label">Name</label>
+                <div class="col-3">
+                    <input type="text" class="form-control" id="name" name="name">
+                    @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <label for="email" class="col-auto col-form-label">Email</label>
+                <div class="col-3">
+                    <input type="email" class="form-control" id="email" name="email">
+                    @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <label for="amount" class="col-auto col-form-label">Amount</label>
+                <div class="col-3">
+                    <input type="number" class="form-control" id="amount" name="amount">
+                    @error('amount')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <label for="message" class="col-auto col-form-label">Message</label>
+                <div class="col-3">
+                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                </div>
+                </div>
+                    <button class="bg-success" type="submit" class="submit">Submit</button>
                 </div>
             </form>
         </div>
